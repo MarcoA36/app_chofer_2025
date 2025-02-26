@@ -1,0 +1,8 @@
+.login,
+.register {
+    margin: auto;
+}
+
+.msg_link_register a {
+    text-decoration: none;
+}

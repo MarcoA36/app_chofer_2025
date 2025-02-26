@@ -1,0 +1,44 @@
+/* .tabla_viajes-wrapper {
+    margin: 10px;
+    padding: 10px;
+} */
+
+
+/* ListaViajes.css */
+
+/* .lista_viajes-wrapper {
+    margin: auto;
+    padding: 10px;
+  }
+  
+  .viaje-card {
+    background: var(--background-card);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    padding: 15px;
+    transition: box-shadow 0.3s ease;
+    text-align: center;
+  }
+  
+  .viaje-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .viaje-info p {
+    margin: 0;
+    padding: 5px 0;
+    color: var(--color-card);
+  }
+  
+  .viaje-info strong {
+    color: #f2eeee;
+  }
+   */
+
+
+   p {
+    margin: 0;
+    padding: 0;
+   }

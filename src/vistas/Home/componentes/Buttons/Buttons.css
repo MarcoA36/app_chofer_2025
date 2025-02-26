@@ -1,0 +1,33 @@
+.buttons_group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* max-width: 100%; */
+    gap: 10px;
+    width: 100%;
+    margin: auto;
+    padding: 6px;
+    margin-bottom: 0;
+  }
+  
+  .buttons_group a {
+    text-decoration: none;
+  }
+  
+  .button {
+    padding: 6px 12px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    /* background-color: #007bff; */
+    box-shadow: 1px 2px 5px rgb(22, 22, 22);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  

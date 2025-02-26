@@ -1,0 +1,90 @@
+.dashboard {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--color-content-bg);
+    border-radius: 8px;
+    word-wrap: break-word; 
+}
+
+.ultimo-y-boton{
+  margin-top: 10px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.ultimo_viaje{
+    background-color: rgb(87, 87, 87);
+}
+
+.ultimo_viaje span {
+  font-size: var(--fs-1);
+}
+
+
+
+.accion {
+    cursor: pointer;
+}
+
+.accion {
+    width: 90%;
+    margin: auto;
+}
+.accion button {
+  width: 100%;
+    font-size: 40px;
+    padding: 12px;
+}
+
+
+/* CONTROLES DE ESTADO DE CHOFER */
+
+.dash_controls {
+    display: flex;
+    align-items: center;
+}
+
+.dashboard .buttons_group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    /* max-width: 100%; */
+    width: 100%;
+    margin: auto;
+    padding: 6px;
+    margin-bottom: 0;
+  }
+
+  .control {
+    height: 100%;
+display: flex;
+justify-content: center;
+/* flex-direction: column; */
+gap: 5px;
+align-items: center;
+  }
+  
+  .dashboard .control .button {
+    padding: 6px 12px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    /* background-color: #007bff; */
+    box-shadow: 1px 2px 5px rgb(22, 22, 22);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+
+
+  .info {
+    display: flex;
+    justify-content: space-around;
+  }

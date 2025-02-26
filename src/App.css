@@ -1,0 +1,84 @@
+:root {
+  --color-gradient-start: rgb(20, 20, 20);
+  --color-gradient-end: rgb(28, 30, 28);
+  --color-gris: rgb(76, 76, 77);
+  --color-content-bg: rgb(24, 23, 23);
+  --color-scrollbar-track: rgba(255, 255, 255, 0.1);
+  --color-scrollbar-thumb: rgba(255, 255, 255, 0.3);
+  --color-scrollbar-thumb-hover: rgba(255, 255, 255, 0.5);
+  --color-text: white;
+  --fs-1: 20px;
+  --fs-2: 18px;
+  --background-card: rgb(87, 87, 87);
+  --color-card: rgb(168, 214, 168);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  max-height: 100vh;
+}
+
+.App {
+  height: 100vh;
+
+  background: linear-gradient(
+    to bottom right,
+    var(--color-gradient-start),
+    var(--color-gradient-end)
+  );
+  display: flex;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.app_container {
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  background: linear-gradient(
+    to top right,
+    var(--color-gradient-start),
+    var(--color-gradient-end)
+  );
+  margin: auto;
+  padding: 20px;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+/* .dashboard {
+  overflow-y: auto;
+} */
+
+/* Añade esto a tu archivo CSS */
+
+.dashboard {
+  overflow-y: auto;
+  max-height: 100vh;
+  background-color: #f7f7f7; /* Color de fondo claro */
+}
+
+.dashboard::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dashboard::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+.dashboard::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+
+
+@media (max-width: 768px) {
+  .chat_container {
+    padding: 10px;
+  }
+}

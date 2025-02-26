@@ -1,0 +1,70 @@
+.mapa_container {
+    height: 84vh;
+    /* max-height: 1000px; */
+    /* margin: 23px 0px; */
+    position: relative;
+    background-color: #545454; 
+    border-radius: 10px; 
+    box-shadow: inset 0px 4px 6px rgba(0, 0, 0, 0.2), /* Sombra interior */
+                0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra exterior */
+    padding: 10px; 
+}
+
+.mapa {
+    width: 100%;
+    /* max-width: 1000px; */
+    margin: auto;
+    /* height: 90vh; */
+    height: 100%;
+}
+
+.viajes-sin-asignar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    max-width: 250px;
+    /* height: 100%; */
+    max-height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    color: white;
+    padding: 15px;
+    overflow-y: auto;
+    border-radius: 8px;
+    z-index: 1000; 
+  }
+  .viajes-sin-asignar::-webkit-scrollbar {
+    width: 4px; /* Hacer más estrecha la barra */
+  }
+  
+  .viajes-sin-asignar::-webkit-scrollbar-track {
+    background: transparent; /* Fondo del track invisible */
+  }
+  
+  .viajes-sin-asignar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3); /* Color del thumb semi-transparente */
+    border-radius: 10px; /* Bordes redondeados */
+  }
+  
+  .viajes-sin-asignar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5); /* Cambiar color al pasar el cursor */
+  }
+  
+  /* Compatibilidad con Firefox */
+  .viajes-sin-asignar {
+    scrollbar-width: thin; /* Hacer la barra más delgada */
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent; /* Color del thumb y fondo */
+  }
+  
+  
+  .viaje-item {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+
+
+
+
+  .modal_container {
+    max-width: 350px;
+  }
