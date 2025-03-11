@@ -59,7 +59,7 @@ const ViajesPendientes = () => {
   };
 
   return (
-    <div className="viaje-asignado m-2 p-2 rounded text-center h-100">
+    <div className="viaje-asignado my-2 py-2 rounded text-center h-100">
           <div className="admin-message bg-warning text-dark rounded p-3 my-3 shadow-sm">
         <strong>📢 Mensaje del admin:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit.
       </div>

@@ -9,7 +9,7 @@ const ListaViajes = () => {
   );
 
   return (
-    <div className="lista_viajes m-3">
+    <div className="lista_viajes mx-1">
       {viajesOrdenados.map((viaje, index) => (
         <Card
           key={index}

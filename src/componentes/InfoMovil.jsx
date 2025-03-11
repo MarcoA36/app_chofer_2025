@@ -8,7 +8,7 @@ const InfoMovil = () => {
 
   if(!user) return <Loader />
   return (
-    <div className="ultimo_viaje m-2 p-2 rounded text-center">
+    <div className="ultimo_viaje my-2 py-2 rounded text-center">
     <p>
       Movil: <span>{movil.numero_movil}</span>
     </p>
