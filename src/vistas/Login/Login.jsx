@@ -68,6 +68,11 @@ const Login = () => {
         </button>
       </form>
 
+
+     <div>
+      <p>Usuario:"usuario"</p>
+      <p>Contraseña:"123456"</p>
+     </div>
     </div>
   );
 };

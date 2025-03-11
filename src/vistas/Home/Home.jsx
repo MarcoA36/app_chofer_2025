@@ -5,17 +5,15 @@ import { useData } from "../../context/DataContext";
 import Loader from "../../componentes/Loader";
 import InfoTurno from "../../componentes/InfoTurno";
 import InfoMovil from "../../componentes/InfoMovil";
-// import BarraDeCarga from "../../componentes/BarraDeCarga";
 
 function Home() {
   const { loadingData } = useData();
-  console.log("home renderizado")
+  console.log("home renderizado");
   useSocketHandler();
   return (
     <>
-         <InfoMovil />
+      <InfoMovil />
       <div className="dashboard">
-        {/* <Outlet /> */}
         {loadingData ? <Loader /> : <Outlet />}
       </div>
       <InfoTurno />

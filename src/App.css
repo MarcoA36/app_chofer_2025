@@ -42,7 +42,7 @@ body {
     var(--color-gradient-end)
   );
   margin: auto;
-  padding: 20px;
+  padding: 10px;
   color: var(--color-text);
   display: flex;
   flex-direction: column;

@@ -4,7 +4,7 @@ import { useData } from "../context/DataContext"
 const InfoTurno = () => {
   const {viajesCompletados, totalImportes} = useData()
   return (
-    <div className="ultimo_viaje my-2 py-2 rounded text-center">
+    <div className="ultimo_viaje mt-2 py-2 rounded text-center">
     <p>
       Viajes realizados: <span>{viajesCompletados.length}</span>
     </p>
