@@ -40,9 +40,13 @@ import InfoMovil from "../../componentes/InfoMovil";
 import InfoUbicacion from "../../componentes/InfoUbicacion";
 import InfoHeader from "../../componentes/InfoHeader";
 import InfoEstadoMovil from "../../componentes/InfoEstadoMovil";
+import { useZona } from "../../context/ZonaContext";
 
 function Home() {
-  const { loadingData} = useData();
+  const { loadingData } = useData();
+  const { loadingZonas } = useZona(); 
+
+  const isLoading = loadingData || loadingZonas;
   console.log("home renderizado");
   useSocketHandler();
 
@@ -51,7 +55,7 @@ function Home() {
    <InfoHeader/>
    <InfoEstadoMovil/>
       <div className="dashboard">
-        {loadingData ? <Loader /> : <Outlet />}
+        {isLoading ? <Loader /> : <Outlet />}
       </div>
       {/* <InfoTurno /> */}
       <Buttons />

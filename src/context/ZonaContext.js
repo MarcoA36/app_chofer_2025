@@ -12,7 +12,7 @@ export const ZonaProvider = ({ children }) => {
   const [zonas, setZonas] = useState([]);
   const [zonaActual, setZonaActual] = useState(null);
   const [zonaSeleccionadaTemp, setZonaSeleccionadaTemp] = useState(null);
-
+  const [loadingZonas, setLoadingZonas] = useState(true);
   const olavarriaUbicacion = [-36.892, -60.322];
 
   useEffect(() => {
@@ -22,6 +22,8 @@ export const ZonaProvider = ({ children }) => {
         setZonas(res.data);
       } catch (error) {
         console.error("Error al cargar zonas:", error);
+      }finally {
+        setLoadingZonas(false); 
       }
     };
     fetchZonas();
@@ -53,6 +55,7 @@ export const ZonaProvider = ({ children }) => {
         setZonaActual,
         zonaSeleccionadaTemp,
         setZonaSeleccionadaTemp,
+        loadingZonas
       }}
     >
       {children}
