@@ -70,7 +70,7 @@ const Login = () => {
 
 
      <div>
-      <p>Usuario:"usuario"</p>
+      <p>Usuario:"juan123"</p>
       <p>Contraseña:"123456"</p>
      </div>
     </div>
