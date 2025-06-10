@@ -88,3 +88,26 @@ align-items: center;
     display: flex;
     justify-content: space-around;
   }
+
+
+  .header_info {
+    display: flex;
+  }
+
+
+  .info-header {
+    gap: 0.5rem;
+  }
+  
+  .info-movil span {
+    font-weight: bold;
+  }
+  
+  .info-ubicacion {
+    transition: background-color 0.3s ease;
+  }
+  
+  .info-ubicacion:hover {
+    background-color: #218838;
+  }
+  

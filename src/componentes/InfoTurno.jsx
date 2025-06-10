@@ -1,4 +1,4 @@
-// import { Link } from "react-router-dom"
+
 import { useData } from "../context/DataContext"
 
 const InfoTurno = () => {
@@ -11,11 +11,6 @@ const InfoTurno = () => {
     <p>
       Caja total: <span>{totalImportes}</span>
     </p>
-    {/* <p>
-      Con descuento: <span>{totalImportes * 0.8}</span>
-    </p> */}
-
-     {/* <Link to={"/viajes-completados"}>Ver detalles</Link> */}
   </div>
   )
 }

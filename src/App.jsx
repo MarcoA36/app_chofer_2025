@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 // import Home from "./vistas/Home/Home";
 import Login from "./vistas/Login/Login";
 import TablaViajes from "./vistas/Viajes/TablaViajes";
@@ -12,7 +12,7 @@ import Home from "./vistas/Home/Home";
 
 function App() {
   return (
-    <BrowserRouter>
+
       <div className="App">
         <div className="app_container">
           <Routes>
@@ -27,7 +27,7 @@ function App() {
           </Routes>
         </div>
       </div>
-    </BrowserRouter>
+
   );
 }
 

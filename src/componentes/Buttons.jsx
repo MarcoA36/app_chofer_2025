@@ -19,12 +19,13 @@ const Buttons = () => {
       <Link to="/" className="button">
         <FaHome />
       </Link>
-      <Link to="/viajes-completados" className="button">
-        <FaList />
-      </Link>
       <Link to="/mapa" className="button">
         <FaMapMarkerAlt />
       </Link>
+      <Link to="/viajes-completados" className="button">
+        <FaList />
+      </Link>
+   
       {/* <Link to="/ajustes" className="button">
             <FaCog />
           </Link> */}

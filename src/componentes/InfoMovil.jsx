@@ -1,5 +1,6 @@
 import { useAuth } from "../context/AuthContext";
 import { useData } from "../context/DataContext";
+import InfoUbicacion from "./InfoUbicacion";
 import Loader from "./Loader";
 
 const InfoMovil = () => {
@@ -8,8 +9,9 @@ const InfoMovil = () => {
 
   if(!user) return <Loader />
   return (
-    <div className="ultimo_viaje my-2 py-2 rounded text-center">
-    <p>
+    <div className="header_info bg-dark my-2 py-1 rounded">
+      <div className="info_movil">
+      <p>
       Movil: <span>{movil.numero_movil}</span>
     </p>
     <p>
@@ -18,6 +20,9 @@ const InfoMovil = () => {
         {user.nombre} {user.apellido}
       </span>
     </p>
+      </div>
+      <InfoUbicacion/>
+  
   </div>
   )
 }
