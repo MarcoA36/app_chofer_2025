@@ -70,8 +70,8 @@ const Login = () => {
 
 
      <div>
-      <p>Usuario:"juan123"</p>
-      <p>Contraseña:"123456"</p>
+      <p>Usuario:"marco366"</p>
+      <p>Contraseña:" "</p>
      </div>
     </div>
   );

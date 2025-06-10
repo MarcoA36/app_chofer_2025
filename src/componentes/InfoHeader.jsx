@@ -4,7 +4,7 @@ import { useZona } from "../context/ZonaContext";
 import { useAuth } from "../context/AuthContext";
 import { useData } from "../context/DataContext";
 import Loader from "./Loader";
-import { FaMoneyBillWave, FaRoute, FaTaxi, FaUser } from "react-icons/fa";
+import {  FaTaxi, FaUser } from "react-icons/fa";
 const InfoHeader = () => {
   const { user } = useAuth();
   const { movil, viajesOrdenados, viajesCompletados, totalImportes } =
