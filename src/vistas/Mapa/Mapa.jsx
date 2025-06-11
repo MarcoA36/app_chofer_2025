@@ -19,6 +19,7 @@ import InfoUbicacion from "../../componentes/InfoUbicacion";
 import { useZona } from "../../context/ZonaContext";
 import { useNavigate } from "react-router-dom";
 import InfoEstadoMovil from "./componentes/InfoEstadoMovil";
+import { FixMapResize } from "./utils/FixMapResize";
 
 const Mapa = () => {
   const {
@@ -190,6 +191,7 @@ const Mapa = () => {
         style={{ height: "100%", width: "100%" }}
         zoomControl={false}
       >
+         <FixMapResize />
         <MoverMapa ubicacion={ubicacion} />
         <ClickDetector onClick={handleClick} />
         <TileLayer
@@ -332,7 +334,7 @@ const Mapa = () => {
         {hayCambiosZona && (
           <div className="mt-2 d-flex gap-2">
             <button
-              className="btn btn-sm btn-success flex-grow-1"
+              className="btn btn-success flex-grow-1"
               // onClick={() => handleGuardarZona(zonaSeleccionadaTemp.id_zona)}
               onClick={() =>
                 handleGuardarZona(
@@ -345,7 +347,7 @@ const Mapa = () => {
               {loadingZona ? "Guardando..." : "Guardar cambios"}
             </button>
             <button
-              className="btn btn-sm btn-secondary flex-grow-1"
+              className="btn btn-secondary flex-grow-1"
               onClick={() => {
                 // setZonaSeleccionadaId(zonaActual?.id_zona || null);
                 setZonaSeleccionadaTemp(null);
