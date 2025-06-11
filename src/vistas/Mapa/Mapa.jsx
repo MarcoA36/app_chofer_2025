@@ -185,12 +185,19 @@ const Mapa = () => {
 
   return (
     <div style={{ height: "100%", width: "100%", position: "relative" }}>
-      <MapContainer
+      {/* <MapContainer
         center={ubicacion}
         zoom={14}
         style={{ height: "100%", width: "100%" }}
         zoomControl={false}
-      >
+      > */}
+      <MapContainer
+  preferCanvas={true}
+  center={ubicacion}
+  zoom={14}
+  style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }}
+  zoomControl={false}
+>
          <FixMapResize />
         <MoverMapa ubicacion={ubicacion} />
         <ClickDetector onClick={handleClick} />
