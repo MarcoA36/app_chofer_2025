@@ -51,6 +51,15 @@ const Mapa = () => {
   const esAsignarDestino = Boolean(principal);
   const esEditarUbicacion = !principal;
   console.log("VIAJES PENDIENTES", viajesPendientes);
+  const [showMap, setShowMap] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowMap(true);
+    }, 500); // Espera 500ms antes de cargar el mapa
+
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     if (zonaActual) {
@@ -181,13 +190,13 @@ const Mapa = () => {
   }, [zonaSeleccionadaTemp, principal, zonaActual]);
 
   if (!ubicacion) return <p>Cargando mapa...</p>;
-
+  if (!showMap) return <div>Cargando mapa...</div>;
   return (
     <div style={{ height: "100%", width: "100%", position: "relative" }}>
       <MapContainer
         center={ubicacion}
         zoom={14}
-        style={{ height: "400px", width: "400px" }}
+        style={{ height: "100%", width: "100%" }}
         zoomControl={false}
       >
         <MoverMapa ubicacion={ubicacion} />
