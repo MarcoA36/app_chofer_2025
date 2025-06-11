@@ -187,7 +187,7 @@ const Mapa = () => {
     <div style={{ height: "100%", width: "100%", position: "relative" }}>
       <MapContainer
         center={ubicacion}
-        zoom={14}
+        zoom={15}
         style={{ height: "100%", width: "100%" }}
         zoomControl={false}
       >
@@ -199,10 +199,10 @@ const Mapa = () => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         /> */}
         <TileLayer
-  attribution='&copy; OpenStreetMap contributors'
+attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
   detectRetina={true}
-  crossOrigin={true}
+  // crossOrigin={true}
 />
 
         {/* {zonaActual && !zonaSeleccionadaTemp && (
