@@ -7,7 +7,7 @@ const ZonaSelector = ({ zonas, zonaSeleccionadaId, onSeleccionarZona, loading })
   return (
     <div className="mt-3">
       <select
-        className="form-select form-select-sm fs-4"
+        className="form-select form-select-sm fs-5"
         onChange={handleZonaChange}
         value={zonaSeleccionadaId || ""}
         disabled={loading}
