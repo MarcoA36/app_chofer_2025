@@ -20,6 +20,7 @@ import { useZona } from "../../context/ZonaContext";
 import { useNavigate } from "react-router-dom";
 import InfoEstadoMovil from "./componentes/InfoEstadoMovil";
 import MoverMapaAlCargar from "./utils/MoverMapaAlCargar";
+import FixBlurOnLoad from "./utils/FixBlurOnLoad";
 
 const Mapa = () => {
   const {
@@ -192,7 +193,8 @@ const Mapa = () => {
       >
         <MoverMapa ubicacion={ubicacion} />
         <ClickDetector onClick={handleClick} />
-        <MoverMapaAlCargar/>
+        {/* <MoverMapaAlCargar/> */}
+        <FixBlurOnLoad/>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
