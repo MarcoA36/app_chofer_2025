@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { MapContainer, TileLayer, Circle } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useData } from "../../context/DataContext";
@@ -6,8 +6,6 @@ import {
   actualizarUbicacionRequest,
   buscarZonaRequest,
   ingresarDestinoRequest,
-  ingresarZonaDestinoRequest,
-  obtenerZonasRequest,
 } from "../../api/data";
 import ZonaSelector from "../../componentes/ZonaSelector";
 import { MoverMapa } from "./utils/MoverMapa";
@@ -15,12 +13,8 @@ import BuscarZona from "../../componentes/BuscarZona";
 // import InfoViajes from "../../componentes/InfoViajes";
 import { detectarZonaPorRadio } from "./utils/detectarZona";
 import { ClickDetector } from "./utils/ClickDetector";
-import InfoUbicacion from "../../componentes/InfoUbicacion";
 import { useZona } from "../../context/ZonaContext";
 import { useNavigate } from "react-router-dom";
-import InfoEstadoMovil from "./componentes/InfoEstadoMovil";
-import MoverMapaAlCargar from "./utils/MoverMapaAlCargar";
-import FixBlurOnLoad from "./utils/FixBlurOnLoad";
 
 const Mapa = () => {
   const {
@@ -193,37 +187,10 @@ const Mapa = () => {
       >
         <MoverMapa ubicacion={ubicacion} />
         <ClickDetector onClick={handleClick} />
-        {/* <MoverMapaAlCargar/> */}
-        <FixBlurOnLoad/>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-
-        {/* {zonaActual && !zonaSeleccionadaTemp && (
-          <Circle
-            center={[zonaActual.latitud, zonaActual.longitud]}
-            radius={zonaActual.radio}
-            pathOptions={{
-              color: "blue",
-              stroke: false,
-              fillColor: "blue",
-              fillOpacity: 0.2,
-            }}
-          />
-        )} */}
-        {/* {zonaActual && !zonaSeleccionadaTemp && !principal && (
-          <Circle
-            center={[zonaActual.latitud, zonaActual.longitud]}
-            radius={zonaActual.radio}
-            pathOptions={{
-              color: "blue",
-              stroke: false,
-              fillColor: "blue",
-              fillOpacity: 0.2,
-            }}
-          />
-        )} */}
 
         {!principal && !zonaSeleccionadaTemp && zonaActual && (
           <Circle
