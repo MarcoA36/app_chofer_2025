@@ -188,16 +188,22 @@ const Mapa = () => {
       <MapContainer
         center={ubicacion}
         zoom={14}
-        style={{ height: "400px", width: "100%" }}
+        style={{ height: "100%", width: "100%" }}
         zoomControl={false}
       >
          <FixMapResize />
         <MoverMapa ubicacion={ubicacion} />
         <ClickDetector onClick={handleClick} />
-        <TileLayer
+        {/* <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
+        /> */}
+        <TileLayer
+  attribution='&copy; OpenStreetMap contributors'
+  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+  detectRetina={true}
+  crossOrigin={true}
+/>
 
         {/* {zonaActual && !zonaSeleccionadaTemp && (
           <Circle
