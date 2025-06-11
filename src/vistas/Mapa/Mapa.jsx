@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
-import { MapContainer, TileLayer, Circle } from "react-leaflet";
+import { MapContainer, TileLayer, Circle, useMapEvent } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useData } from "../../context/DataContext";
 import {
@@ -19,7 +19,7 @@ import InfoUbicacion from "../../componentes/InfoUbicacion";
 import { useZona } from "../../context/ZonaContext";
 import { useNavigate } from "react-router-dom";
 import InfoEstadoMovil from "./componentes/InfoEstadoMovil";
-import { FixMapResize } from "./utils/FixMapResize";
+import { TileLayerWithLoader } from "./componentes/TileLayerWithLoader";
 
 const Mapa = () => {
   const {
@@ -52,7 +52,16 @@ const Mapa = () => {
   const esAsignarDestino = Boolean(principal);
   const esEditarUbicacion = !principal;
   console.log("VIAJES PENDIENTES", viajesPendientes);
+  const [tilesLoaded, setTilesLoaded] = useState(false);
 
+  const MapEvents = () => {
+    useMapEvent("load", () => {
+      setTilesLoaded(true);
+      console.log("tiles: ", tilesLoaded);
+    });
+
+    return null;
+  };
   useEffect(() => {
     if (zonaActual) {
       setUbicacion([zonaActual.latitud, zonaActual.longitud]);
@@ -185,51 +194,21 @@ const Mapa = () => {
 
   return (
     <div style={{ height: "100%", width: "100%", position: "relative" }}>
+  
       <MapContainer
         center={ubicacion}
-        zoom={15}
+        zoom={14}
         style={{ height: "100%", width: "100%" }}
         zoomControl={false}
       >
-         <FixMapResize />
         <MoverMapa ubicacion={ubicacion} />
         <ClickDetector onClick={handleClick} />
         {/* <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         /> */}
-        <TileLayer
-attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-  detectRetina={true}
-  // crossOrigin={true}
-/>
-
-        {/* {zonaActual && !zonaSeleccionadaTemp && (
-          <Circle
-            center={[zonaActual.latitud, zonaActual.longitud]}
-            radius={zonaActual.radio}
-            pathOptions={{
-              color: "blue",
-              stroke: false,
-              fillColor: "blue",
-              fillOpacity: 0.2,
-            }}
-          />
-        )} */}
-        {/* {zonaActual && !zonaSeleccionadaTemp && !principal && (
-          <Circle
-            center={[zonaActual.latitud, zonaActual.longitud]}
-            radius={zonaActual.radio}
-            pathOptions={{
-              color: "blue",
-              stroke: false,
-              fillColor: "blue",
-              fillOpacity: 0.2,
-            }}
-          />
-        )} */}
-
+           <TileLayerWithLoader onTilesLoaded={() => setTilesLoaded(true)} />
+     
         {!principal && !zonaSeleccionadaTemp && zonaActual && (
           <Circle
             center={[zonaActual.latitud, zonaActual.longitud]}
