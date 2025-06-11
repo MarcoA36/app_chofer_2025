@@ -7,11 +7,11 @@ const MoverMapaAlCargar = () => {
   useEffect(() => {
     const doZoomFix = () => {
       const currentZoom = map.getZoom();
-      map.setZoom(currentZoom + 0.0001); // Pequeño movimiento
+      map.setZoom(currentZoom + 0.1); // Pequeño movimiento
     };
 
     // Espera apenas 300ms después de renderizado
-    setTimeout(doZoomFix, 300);
+    setTimeout(doZoomFix, 500);
   }, [map]);
 
   return null;

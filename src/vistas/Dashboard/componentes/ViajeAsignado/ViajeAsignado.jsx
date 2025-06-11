@@ -112,8 +112,8 @@ const ViajesPendientes = () => {
       )}
 
       {cola && (
-        <div className="card-viaje-asignado">
-          <h6 className="mb-1 text-light">Próximo viaje</h6>
+        <div className="card-viaje-asignado bg-danger p-2 text-center">
+          <h6 className="mb-1 text-light fw-bold">Próximo viaje</h6>
           <p className="mb-0 fs-5 fw-bold text-warning">{cola.origen}</p>
         </div>
       )}
