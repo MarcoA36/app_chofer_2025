@@ -195,7 +195,7 @@ const Mapa = () => {
     <div style={{ height: "100%", width: "100%", position: "relative" }}>
       <MapContainer
         center={ubicacion}
-        zoom={14}
+        zoom={13}
         style={{ height: "100%", width: "100%" }}
         zoomControl={false}
       >
