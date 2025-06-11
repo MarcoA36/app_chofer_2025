@@ -22,7 +22,7 @@ const EditableField = ({
   return isEditing ? (
     <input
       type={type}
-      className="form-control"
+      className="form-control fs-4"
       style={{
         maxWidth: "200px",
         border: "none",
@@ -42,6 +42,7 @@ const EditableField = ({
         // color: value ? "orange" : color,
         cursor: value ? "default" : "pointer",
       }}
+      className="fs-4"
       onClick={() => !loading && setIsEditing(true)}
     >
       {value || placeholder}

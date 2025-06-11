@@ -11,7 +11,7 @@ const IngresarDestino = ({ loading, onSave, viaje }) => {
   const zonaDestino = zonas.find((z) => z.id_zona === viaje.id_zona_destino);
 
   return (
-    <div className="card-box mb-2">
+    <div className="card-box">
       {zonaDestino ? (
         <p
           className="mb-3 fw-medium bg-success text-light p-2 rounded border"
@@ -42,7 +42,7 @@ const IngresarDestino = ({ loading, onSave, viaje }) => {
 
       {/* Zona */}
       <div
-        className="input-container d-flex align-items-center gap-3 border rounded"
+        className="input-container d-flex align-items-center fs-4 gap-3 border rounded"
         onClick={() => navigate("/mapa")}
       >
         <FaMapMarkedAlt size={22} color="#0d6efd" />

@@ -16,10 +16,11 @@ const BuscarZona = ({ onBuscar, loading }) => {
       <Form.Control
         type="text"
         placeholder="Ingresar dirección o lugar"
+        className='fs-4'
         value={direccion}
         onChange={(e) => setDireccion(e.target.value)}
       />
-      <Button type="submit" variant="primary" disabled={loading}>
+      <Button type="submit" className='fs-4' variant="primary" disabled={loading}>
         {loading ? <Spinner animation="border" size="sm" /> : 'Buscar'}
       </Button>
     </Form>

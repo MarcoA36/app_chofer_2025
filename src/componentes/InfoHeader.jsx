@@ -18,9 +18,9 @@ const InfoHeader = () => {
   const estaLibre = !principal;
 
   return (
-    <div className="info-header bg-dark text-white rounded px-3 py-2 my-2 d-flex flex-wrap justify-content-between align-items-center flex-sm-row">
+    <div className="info-header bg-dark text-white rounded px-3 py-1  my-2 d-flex flex-wrap justify-content-between align-items-center flex-sm-row">
       {/* Móvil y Chofer */}
-      <div className="info-movil text-center text-sm-start mb-2 mb-sm-0">
+      <div className="info-movil text-center text-sm-start mb-sm-0">
         <p className="mb-1 d-flex align-items-center gap-2">
           <FaTaxi />
           <span className="fw-bold">{movil.numero_movil}</span>
@@ -45,7 +45,7 @@ const InfoHeader = () => {
             Caja: <span className="fw-bold">{totalImportes}</span>
           </p>
         </div> */}
-        <div className="info-turno text-center mb-2 mb-sm-0 p-2 rounded border-secondary border border-2 shadow-sm transition">
+        <div className="info-turno text-center mb-sm-0 p-2 rounded border-secondary border border-2 shadow-sm transition">
     <p className="mb-1 d-flex justify-content-center align-items-center gap-2">
  
       <span className="fw-bold">{viajesCompletados.length} viajes</span>

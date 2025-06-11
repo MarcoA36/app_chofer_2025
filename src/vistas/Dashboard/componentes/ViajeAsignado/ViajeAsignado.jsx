@@ -86,7 +86,7 @@ const ViajesPendientes = () => {
   return (
     <div className="viaje-asignado px-2">
       {principal ? (
-        <div key={principal.id} className="card-viaje-asignado">
+        <div key={principal.id} className="card-viaje-asignado px-2 py-1">
           <InfoViaje viaje={principal} />
 
           <IngresarDestino
