@@ -56,7 +56,7 @@ const Mapa = () => {
     if (zonaActual) {
       setUbicacion([zonaActual.latitud, zonaActual.longitud]);
     }
-    setZonaSeleccionadaTemp(null)
+    setZonaSeleccionadaTemp(null);
   }, [zonaActual]);
 
   // useEffect(() => {
@@ -166,21 +166,19 @@ const Mapa = () => {
     }
   }, [movil?.id_zona, zonas]);
 
-
   const hayCambiosZona = useMemo(() => {
     if (!zonaSeleccionadaTemp?.id_zona) return false;
-  
+
     if (esAsignarDestino) {
       return zonaSeleccionadaTemp.id_zona !== principal?.id_zona_destino;
     }
-  
+
     if (esEditarUbicacion) {
       return zonaSeleccionadaTemp.id_zona !== zonaActual?.id_zona;
     }
-  
+
     return false;
   }, [zonaSeleccionadaTemp, principal, zonaActual]);
-  
 
   if (!ubicacion) return <p>Cargando mapa...</p>;
 
@@ -192,7 +190,6 @@ const Mapa = () => {
         style={{ height: "100%", width: "100%" }}
         zoomControl={false}
       >
-      
         <MoverMapa ubicacion={ubicacion} />
         <ClickDetector onClick={handleClick} />
         <TileLayer
@@ -225,60 +222,62 @@ const Mapa = () => {
           />
         )} */}
 
+        {!principal && !zonaSeleccionadaTemp && zonaActual && (
+          <Circle
+            center={[zonaActual.latitud, zonaActual.longitud]}
+            radius={zonaActual.radio}
+            pathOptions={{
+              color: "blue",
+              stroke: false,
+              fillColor: "blue",
+              fillOpacity: 0.2,
+            }}
+          />
+        )}
 
-{!principal && !zonaSeleccionadaTemp && zonaActual && (
-  <Circle
-    center={[zonaActual.latitud, zonaActual.longitud]}
-    radius={zonaActual.radio}
-    pathOptions={{
-      color: "blue",
-      stroke: false,
-      fillColor: "blue",
-      fillOpacity: 0.2,
-    }}
-  />
-)}
-
-{principal 
-// && !zonaSeleccionadaTemp 
-&& (
-  <>
-    {zonas.some(z => z.id_zona === principal.id_zona) && (
-      <Circle
-        center={[
-          zonas.find(z => z.id_zona === principal.id_zona).latitud,
-          zonas.find(z => z.id_zona === principal.id_zona).longitud,
-        ]}
-        radius={zonas.find(z => z.id_zona === principal.id_zona).radio}
-        pathOptions={{
-          color: "blue",
-          stroke: false,
-          fillColor: "orange",
-          fillOpacity: 0.2,
-        }}
-      />
-    )}
-    {principal.id_zona_destino &&
-      zonas.some(z => z.id_zona === principal.id_zona_destino) && (
-        <Circle
-          center={[
-            zonas.find(z => z.id_zona === principal.id_zona_destino).latitud,
-            zonas.find(z => z.id_zona === principal.id_zona_destino).longitud,
-          ]}
-          radius={zonas.find(z => z.id_zona === principal.id_zona_destino).radio}
-          pathOptions={{
-            color: "green",
-            stroke: false,
-            fillColor: "blue",
-            fillOpacity: 0.2,
-          }}
-        />
-      )}
-  </>
-)}
-
-
-
+        {principal && (
+          // && !zonaSeleccionadaTemp
+          <>
+            {zonas.some((z) => z.id_zona === principal.id_zona) && (
+              <Circle
+                center={[
+                  zonas.find((z) => z.id_zona === principal.id_zona).latitud,
+                  zonas.find((z) => z.id_zona === principal.id_zona).longitud,
+                ]}
+                radius={
+                  zonas.find((z) => z.id_zona === principal.id_zona).radio
+                }
+                pathOptions={{
+                  color: "blue",
+                  stroke: false,
+                  fillColor: "orange",
+                  fillOpacity: 0.2,
+                }}
+              />
+            )}
+            {principal.id_zona_destino &&
+              zonas.some((z) => z.id_zona === principal.id_zona_destino) && (
+                <Circle
+                  center={[
+                    zonas.find((z) => z.id_zona === principal.id_zona_destino)
+                      .latitud,
+                    zonas.find((z) => z.id_zona === principal.id_zona_destino)
+                      .longitud,
+                  ]}
+                  radius={
+                    zonas.find((z) => z.id_zona === principal.id_zona_destino)
+                      .radio
+                  }
+                  pathOptions={{
+                    color: "green",
+                    stroke: false,
+                    fillColor: "blue",
+                    fillOpacity: 0.2,
+                  }}
+                />
+              )}
+          </>
+        )}
 
         {zonaSeleccionadaTemp && (
           <Circle
@@ -298,23 +297,27 @@ const Mapa = () => {
       </MapContainer>
 
       <div
-        className="zona-panel"
+        className="zona-panel bg-dark"
         style={{
           position: "absolute",
           bottom: 0,
           left: 0,
           right: 0,
-          background: "rgba(255, 255, 255, 0.9)",
+          // background: "rgba(255, 255, 255, 0.9)",
           padding: "1rem",
           borderTop: "1px solid #ccc",
           zIndex: 1000,
         }}
       >
-     {hayCambiosZona && (
-  <div className={`alert ${principal ? "alert-primary" : "alert-success"} text-center fw-bold py-2 mb-2`}>
-    {principal ? "Nuevo destino" : "Nueva zona libre"}
-  </div>
-)}
+        {hayCambiosZona && (
+          <div
+            className={`alert ${
+              principal ? "alert-primary" : "alert-success"
+            } text-center fw-bold py-2 mb-2`}
+          >
+            {principal ? "Nuevo destino" : "Nueva zona libre"}
+          </div>
+        )}
         <BuscarZona onBuscar={handleBuscarDireccion} loading={loadingZona} />
         <ZonaSelector
           zonas={zonas}

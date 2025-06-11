@@ -28,8 +28,6 @@
 
 // export default Home;
 
-
-
 import { Outlet } from "react-router-dom";
 import Buttons from "../../componentes/Buttons";
 import useSocketHandler from "../../hooks/socketHandler";
@@ -44,20 +42,21 @@ import { useZona } from "../../context/ZonaContext";
 
 function Home() {
   const { loadingData } = useData();
-  const { loadingZonas } = useZona(); 
+  const { loadingZonas } = useZona();
 
   const isLoading = loadingData || loadingZonas;
   console.log("home renderizado");
   useSocketHandler();
-
+  if (isLoading) {
+    return <Loader />;
+  }
   return (
     <>
-   <InfoHeader/>
-   <InfoEstadoMovil/>
+      <InfoHeader />
+      <InfoEstadoMovil />
       <div className="dashboard">
-        {isLoading ? <Loader /> : <Outlet />}
+        <Outlet />
       </div>
-      {/* <InfoTurno /> */}
       <Buttons />
     </>
   );
