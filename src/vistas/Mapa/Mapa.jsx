@@ -19,6 +19,7 @@ import InfoUbicacion from "../../componentes/InfoUbicacion";
 import { useZona } from "../../context/ZonaContext";
 import { useNavigate } from "react-router-dom";
 import InfoEstadoMovil from "./componentes/InfoEstadoMovil";
+import MoverMapaAlCargar from "./utils/MoverMapaAlCargar";
 
 const Mapa = () => {
   const {
@@ -51,15 +52,6 @@ const Mapa = () => {
   const esAsignarDestino = Boolean(principal);
   const esEditarUbicacion = !principal;
   console.log("VIAJES PENDIENTES", viajesPendientes);
-  const [showMap, setShowMap] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowMap(true);
-    }, 500); // Espera 500ms antes de cargar el mapa
-
-    return () => clearTimeout(timer);
-  }, []);
 
   useEffect(() => {
     if (zonaActual) {
@@ -190,7 +182,6 @@ const Mapa = () => {
   }, [zonaSeleccionadaTemp, principal, zonaActual]);
 
   if (!ubicacion) return <p>Cargando mapa...</p>;
-  if (!showMap) return <div>Cargando mapa...</div>;
   return (
     <div style={{ height: "100%", width: "100%", position: "relative" }}>
       <MapContainer
@@ -201,6 +192,7 @@ const Mapa = () => {
       >
         <MoverMapa ubicacion={ubicacion} />
         <ClickDetector onClick={handleClick} />
+        <MoverMapaAlCargar/>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
