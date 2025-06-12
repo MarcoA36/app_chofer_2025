@@ -267,14 +267,14 @@ const Mapa = () => {
       </MapContainer>
 
       <div
-        className="zona-panel bg-dark"
+        className="zona-panel bg-dark px-1 py-3"
         style={{
           position: "absolute",
           bottom: 0,
           left: 0,
           right: 0,
           // background: "rgba(255, 255, 255, 0.9)",
-          padding: "1rem",
+          // padding: "1rem",
           borderTop: "1px solid #ccc",
           zIndex: 1000,
         }}
