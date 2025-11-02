@@ -53,10 +53,11 @@ function Home() {
   return (
     <>
       <InfoHeader />
-      <InfoEstadoMovil />
+    
       <div className="dashboard">
         <Outlet />
       </div>
+      <InfoEstadoMovil />
       <Buttons />
     </>
   );

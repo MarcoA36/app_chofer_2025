@@ -104,11 +104,9 @@ const ViajesPendientes = () => {
           />
         </div>
       ) : (
-        // <div className="alert alert-secondary text-center fw-medium">
-        //   No tienes viajes asignados
-        // </div>
-        // <InfoEstadoMovil />
-        ""
+        <div className="my-3 text-center fs-4 fw-medium">
+          No tienes viajes asignados
+        </div>
       )}
 
       {cola && (
